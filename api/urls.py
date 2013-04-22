@@ -21,7 +21,8 @@ def get_format_urlpatterns(urlpatterns):
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
-    url(r'^users$', views.users, name='users')
+    url(r'^users$', views.users, name='users'),
+    url(r'^categories$', views.categories, name='categories')
 )
 
 urlpatterns = get_format_urlpatterns(urlpatterns)
