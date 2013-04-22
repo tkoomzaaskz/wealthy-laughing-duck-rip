@@ -1,10 +1,10 @@
-import json
-
 from django.http import HttpResponse
+from django.core import serializers
+from api.models import User
 
 def index(request):
     return HttpResponse("Hello, world. You're at the api index.")
 
-def users(request):
-    data = [ {'first_name':'John', 'last_name': 'Lennon'}, {'first_name': 'Paul', 'last_name': 'McCartney'}]
-    return HttpResponse(json.dumps(data), content_type="application/json")
+def users(request, format='json'):
+    data = serializers.serialize(format, User.objects.all())
+    return HttpResponse(data, content_type="application/" + format)
