@@ -1,12 +1,13 @@
 from django.http import HttpResponse
 from django.core import serializers
 from api.models import User, Category
+from django.shortcuts import render
 
 import json
 from tools.serializers.json import Serializer as duck_json_serializer
 
 def index(request):
-    return HttpResponse("Welcome to wealthy-laughing-duck RESTful Python API.")
+    return render(request, 'index.html', {})
 
 def users_old(request, id):
     data = {\
