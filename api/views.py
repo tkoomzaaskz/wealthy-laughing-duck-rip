@@ -6,7 +6,17 @@ import json
 from tools.serializers.json import Serializer as duck_json_serializer
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the api index.")
+    return HttpResponse("Welcome to wealthy-laughing-duck RESTful Python API.")
+
+def users_old(request, id):
+    data = {\
+        1: {'firstName': 'John', 'lastName': 'Lennon'},\
+        2: {'firstName': 'Paul', 'lastName': 'McCartney'},\
+        3: {'firstName': 'George', 'lastName': 'Harrison'},\
+        4: {'firstName': 'Ringo', 'lastName': 'Starr'}\
+    }
+    result = data.values() if id is None else data[int(id)]
+    return HttpResponse(json.dumps(result), content_type="application/json")
 
 def users(request, format='json'):
     data = serializers.serialize(format, User.objects.all())

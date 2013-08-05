@@ -21,10 +21,11 @@ def get_format_urlpatterns(urlpatterns):
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
+    url(r'^users/(?:(?P<id>\d+)/)?$', views.users_old, name='users'),
+    url(r'^users$', views.users, name='users'),
+    url(r'^categories$', views.categories, name='categories'),
     url(r'^test$', views.test, name='test'),
     url(r'^test2$', views.test2, name='test2'),
-    url(r'^users$', views.users, name='users'),
-    url(r'^categories$', views.categories, name='categories')
 )
 
 urlpatterns = get_format_urlpatterns(urlpatterns)
