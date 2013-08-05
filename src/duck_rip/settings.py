@@ -76,6 +76,7 @@ STATIC_URL = '/assets/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "static/bootstrap"),
+    os.path.join(PROJECT_DIR, "static/misc"),
 )
 
 # List of finder classes that know how to find static files in
@@ -126,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
+    'docs',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

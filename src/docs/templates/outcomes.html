@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="span9">
+      <div class="hero-unit">
+        <h2>outcomes</h2>
+        <p>Lists all outcomes available in the system.</p>
+        <p><a href="{% url 'api.views.outcomes'%}" class="btn btn-primary btn-large">Execute &raquo;</a></p>
+      </div>
+    </div>
+{% endblock %}

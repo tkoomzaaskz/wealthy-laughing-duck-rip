@@ -2,12 +2,13 @@ from django.http import HttpResponse
 from django.core import serializers
 from api.models import User, Category
 from django.shortcuts import render
+import docs
 
 import json
 from tools.serializers.json import Serializer as duck_json_serializer
 
 def index(request):
-    return render(request, 'index.html', {})
+    return docs.views.index(request)
 
 def users_old(request, id):
     data = {\
@@ -26,6 +27,12 @@ def users(request, format='json'):
 def categories(request, format='json'):
     data = serializers.serialize(format, Category.objects.all())
     return HttpResponse(data, content_type="application/" + format)
+
+def incomes(request, format='json'):
+    return HttpResponse('nothing now')
+
+def outcomes(request, format='json'):
+    return HttpResponse('nothing now')
 
 def test(request, format='json'):
     raw_data = serializers.serialize('python', User.objects.all(), fields=('first_name', 'last_name'))

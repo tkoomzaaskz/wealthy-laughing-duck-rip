@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="span9">
+        <div class="hero-unit">
+            <h2>categories</h2>
+     
+            <div style="margin-bottom: 30px;">
+                <p>
+                    <pre>http://api/categories</pre>
+                    Returns list of all categories available in the system.
+                </p>
+                <a href="{% url 'api.views.categories'%}" class="btn btn-primary">Execute list &raquo;</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

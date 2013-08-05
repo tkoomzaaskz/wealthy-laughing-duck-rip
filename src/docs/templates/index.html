@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}">
   </head>
   <body>
 
@@ -46,8 +46,8 @@
           <a class="brand" href="#">Wealthy Laughing Duck API</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#about">Documentation</a></li>
-              <li><a href="#about">About the duck</a></li>
+              <li{% if top_tab == 'docs' %} class="active"{% endif %}><a href="{% url 'docs.views.index' %}">Documentation</a></li>
+              <li{% if top_tab == 'about' %} class="active"{% endif %}><a href="{% url 'docs.views.about' %}">About the duck</a></li>
               <li><a href="https://github.com/tkoomzaaskz/wealthy-laughing-duck-rip/issues/new">Contact</a></li>
               <li><a href="https://github.com/tkoomzaaskz/wealthy-laughing-duck-rip">see me on github</a></li>
             </ul>
@@ -63,29 +63,44 @@
             <ul class="nav nav-list">
               <li class="nav-header">Commands</li>
               {% url 'docs.views.users' as docs_users %}
-              <li class="active"><a href="{{ docs_users }}">users</a></li>
-              {% url 'docs.views.users' as docs_categories %}
-              <li><a href="{{ docs_categories }}">categories</a></li>
-              {% url 'docs.views.users' as docs_incomes %}
-              <li><a href="{{ docs_incomes }}">incomes</a></li>
-              {% url 'docs.views.users' as docs_outcomes %}
-              <li><a href="{{ docs_outcomes }}">outcomes</a></li>
+              <li{% if top_tab == 'docs' and command == 'users' %} class="active"{% endif %}>
+                <a href="{{ docs_users }}">users</a>
+              </li>
+              {% url 'docs.views.categories' as docs_categories %}
+              <li{% if top_tab == 'docs' and command == 'categories' %} class="active"{% endif %}>
+                <a href="{{ docs_categories }}">categories</a>
+              </li>
+              {% url 'docs.views.incomes' as docs_incomes %}
+              <li{% if top_tab == 'docs' and command == 'incomes' %} class="active"{% endif %}>
+                <a href="{{ docs_incomes }}">incomes</a>
+              </li>
+              {% url 'docs.views.outcomes' as docs_outcomes %}
+              <li{% if top_tab == 'docs' and command == 'outcomes' %} class="active"{% endif %}>
+                <a href="{{ docs_outcomes }}">outcomes</a>
+              </li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
+        {% block content %}
         <div class="span9">
           <div class="hero-unit">
-            <h1><h1>RESTful Python API</h1></h1>
+            <h1>RESTful Python API</h1>
+            <img src="{% static "img/wealthy-laughing-duck-logo.png" %}" class="img-polaroid" />
             <p>Click on the left side linkbar to display command.</p>
-            <p><a href="#" class="btn btn-primary btn-large">Execute &raquo;</a></p>
           </div>
-        </div><!--/span-->
-      </div><!--/row-->
+        </div>
+        {% endblock %}
+      </div>
 
       <hr>
 
       <footer>
-        <p>&copy; tkoomzaaskz 2013</p>
+        <p>
+          &copy;
+          <a href="https://github.com/tkoomzaaskz">tkoomzaaskz</a>,
+          <a href="http://symfony-world.blogspot.com/">symfony world</a>
+          2013
+        </p>
       </footer>
 
     </div>

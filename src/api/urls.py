@@ -24,6 +24,8 @@ urlpatterns = patterns('',
     url(r'^users/(?:(?P<id>\d+)/)?$', views.users_old, name='users'),
     url(r'^users$', views.users, name='users'),
     url(r'^categories$', views.categories, name='categories'),
+    url(r'^incomes$', views.incomes, name='incomes'),
+    url(r'^outcomes$', views.outcomes, name='outcomes'),
     url(r'^test$', views.test, name='test'),
     url(r'^test2$', views.test2, name='test2'),
 )
