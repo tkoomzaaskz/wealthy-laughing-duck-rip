@@ -1,4 +1,9 @@
 from django.conf.urls import patterns, include, url
+#from django.conf.urls.defaults import *
+from api.tastyapi import *
+
+user_resource = UserResource()
+category_resource = CategoryResource()
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -7,6 +12,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     url(r'^api/', include('api.urls')),
     url(r'^docs/', include('docs.urls')),
+    (r'^api2/', include(user_resource.urls)),
     # Examples:
     # url(r'^$', 'duck_rip.views.home', name='home'),
     # url(r'^duck_rip/', include('duck_rip.foo.urls')),
