@@ -1,10 +1,9 @@
 wealthy-laughing-duck-rip
 =========================
 
-duck project: REST (API) in Python
+This repository holds a python/django code that deploys a RESTful API within
+the *wealthy laughing duck* project. See the repository of the
+[duck-interface project](https://github.com/tkoomzaaskz/duck-interface)
+which provides a RIA (browser application) based on this API.
 
-Make sure you've got PyYAML installed to support YAML format in the API:
-
-    sudo pip install pyyaml
-
-Check [documentation](doc/index.md).
+For more technical details, see the [documentation](doc/index.md).
