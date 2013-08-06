@@ -7,10 +7,18 @@
      
             <div style="margin-bottom: 30px;">
                 <p>
-                    <pre>http://api/categories</pre>
+                    <pre>http://my.api.domain{{ url }}</pre>
                     Returns list of all categories available in the system.
                 </p>
-                <a href="{% url 'api.views.categories'%}" class="btn btn-primary">Execute list &raquo;</a>
+                <a href="{{ url }}" class="btn btn-primary">Execute list &raquo;</a>
+            </div>
+
+            <div>
+                <pre>http://my.api.domain{{ url }}:id</pre>
+                <p>
+                    Returns specific category given by <code>id</code> parameter.
+                </p>
+                <a href="{{ url }}1/" class="btn btn-primary">Execute single &raquo;</a>
             </div>
         </div>
     </div>

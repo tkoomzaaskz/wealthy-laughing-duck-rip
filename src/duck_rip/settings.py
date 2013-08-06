@@ -162,3 +162,6 @@ LOGGING = {
         },
     }
 }
+
+# TASTYPIE
+TASTYPIE_DEFAULT_FORMATS = ['json']
