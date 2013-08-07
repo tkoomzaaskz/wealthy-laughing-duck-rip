@@ -6,6 +6,8 @@ from docs import views
 v1_api = Api(api_name='v1')
 v1_api.register(UserResource())
 v1_api.register(CategoryResource())
+v1_api.register(IncomeResource())
+v1_api.register(OutcomeResource())
 
 urlpatterns = patterns('',
     url(r'^api/$', views.index, name='index'), # welcome page

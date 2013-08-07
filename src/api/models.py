@@ -17,7 +17,7 @@ class User(models.Model):
         return self.first_name + " " + self.last_name
 
 class Category(models.Model):
-    """finance category"""
+    """Finance category"""
     class Meta:
         db_table = 'category'
     parent = models.ForeignKey('self')
@@ -33,3 +33,23 @@ class Category(models.Model):
     updated_by = models.ForeignKey(User, db_column='updated_by', related_name='updatedCategories')
     def __unicode__(self):
         return self.first_name + " " + self.last_name
+
+class Income(models.Model):
+    """Financial incomes"""
+    class Meta:
+        db_table = 'income'
+    category = models.ForeignKey(Category)
+    amount = models.DecimalField(max_digits=5, decimal_places=2)
+    description = models.TextField()
+    created_at = models.DateTimeField()
+    created_by = models.ForeignKey(User, db_column='created_by', related_name='createdIncomes')
+
+class Outcome(models.Model):
+    """Financial outcomes"""
+    class Meta:
+        db_table = 'outcome'
+    category = models.ForeignKey(Category)
+    comment = models.TextField()
+    cash_total = models.DecimalField(max_digits=5, decimal_places=2)
+    created_at = models.DateTimeField()
+    created_by = models.ForeignKey(User, db_column='created_by', related_name='createdOutcomes')

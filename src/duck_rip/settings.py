@@ -75,6 +75,7 @@ STATIC_URL = '/assets/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, "vendor/bootstrap"),
     os.path.join(PROJECT_DIR, "static/bootstrap"),
     os.path.join(PROJECT_DIR, "static/misc"),
 )

@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from api.models import User, Category
+from api.models import *
 
 class UserResource(ModelResource):
     class Meta:
@@ -8,3 +8,11 @@ class UserResource(ModelResource):
 class CategoryResource(ModelResource):
     class Meta:
         queryset = Category.objects.all()
+
+class IncomeResource(ModelResource):
+    class Meta:
+        queryset = Income.objects.all()
+
+class OutcomeResource(ModelResource):
+    class Meta:
+        queryset = Outcome.objects.all()

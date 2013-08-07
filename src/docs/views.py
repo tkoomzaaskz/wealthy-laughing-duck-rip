@@ -26,9 +26,17 @@ def categories(request):
     return render(request, 'categories.html', context)
 
 def incomes(request):
-    context = { 'top_tab': 'docs', 'command': 'incomes' }
+    context = {
+        'top_tab': 'docs',
+        'command': 'incomes',
+        'url': reverse('api_dispatch_list', kwargs={'resource_name': 'income', 'api_name': 'v1'})
+    }
     return render(request, 'incomes.html', context)
 
 def outcomes(request):
-    context = { 'top_tab': 'docs', 'command': 'outcomes' }
+    context = {
+        'top_tab': 'docs',
+        'command': 'outcomes',
+        'url': reverse('api_dispatch_list', kwargs={'resource_name': 'outcome', 'api_name': 'v1'})
+    }
     return render(request, 'outcomes.html', context)
