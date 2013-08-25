@@ -1,12 +1,24 @@
-duck-api-rip
-============
+The Wealthy Laughing Duck Project
+---------------------------------
 
-This repository holds a python/django code that deploys a RESTful API within
-the *wealthy laughing duck* project. See the repository of the
-[duck-interface project](https://github.com/tkoomzaaskz/duck-interface)
+This repository is a [duck component](https://github.com/wealthy-laughing-duck).
+Visit [Wealthy Laughing Duck Project](http://wealthy-laughing-duck.github.io/) for more information.
+
+Python/Django API
+=================
+
+This duck component is a RESTful API consumed by other duck components,
+suck as the [duck interface](https://github.com/wealthy-laughing-duck/duck-interface),
 which provides a RIA (browser application) based on this API.
 
-For more technical details, see the [documentation](doc/index.md).
+Dependencies
+------------
+
+ * [django framework](https://www.djangoproject.com/)
+ * [django tastypie API generator](django-tastypie.readthedocs.org)
+ * [bootstrap](http://twitter.github.com/bootstrap/)
+
+For more technical details, see the [documentation](doc/README.md).
 
 Database
 --------
