@@ -19,9 +19,9 @@ DATABASES = {
         'OPTIONS': {
             'init_command': 'SET storage_engine=INNODB',
         },
-        'NAME': 'duck_finance',
-        'USER': 'duck',
-        'PASSWORD': 'pILqd9a5ImNr9RG4',
+        'NAME': 'duck_database',
+        'USER': 'duck_user',
+        'PASSWORD': 'wXyqhWzlF0uO20j8',
         'HOST': 'localhost',
         'PORT': '3306',
     }
